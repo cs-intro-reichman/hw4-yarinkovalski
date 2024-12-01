@@ -23,7 +23,7 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
 
-        if (sentences == null)
+        if (sentences[0] == "")
             return;
 
         for (int i = 0; i < sentences.length; i++) {
