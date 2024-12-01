@@ -20,6 +20,10 @@ public class MyString {
     public static String lowerCase(String str) {
         // Replace the following statement with your code
 
+        if (str == null) {
+            return "";
+        }
+    
         String str2 = "";
     
         for (int i = 0; i < str.length(); i++) {
