@@ -64,10 +64,10 @@ public class KeywordsDetector {
     public static boolean contains(String str1, String str2) {
         // Replace the following statement with your code
 
-        if (str1 == null || str2 == null)
+        if (str1 == "" && str2 == "")
             return false;
 
-        if (str2.isEmpty())
+        if (str2 == "")
             return true;
 
         // Check each position in str1
@@ -75,12 +75,12 @@ public class KeywordsDetector {
             int len = 0;
             for (int j = 0; j < str2.length(); j++) {
                 if (str1.charAt(i + j) != str2.charAt(j)) 
-                    break; // Characters don't match
+                    break; // Characters not the same
                 len += 1;
             }
             
             if (len == str2.length())
-                return true; // Found match
+                return true; // the same length so must be the same here
         }
 
         return false;
