@@ -20,7 +20,8 @@ public class MyString {
     public static String lowerCase(String str) {
         // Replace the following statement with your code
 
-        if (str == null) {
+        if (str == "") 
+        {
             return "";
         }
     
