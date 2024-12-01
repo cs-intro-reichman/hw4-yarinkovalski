@@ -22,5 +22,69 @@ public class KeywordsDetector {
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         // Replace this comment with your code
+
+        if (sentences[0] == "")
+            return;
+
+        for (int i = 0; i < sentences.length; i++) {
+            for (int j = 0; j < keywords.length; j++) {
+
+                if (contains(lowerCase(sentences[i]),lowerCase(keywords[j])))
+                    System.out.println(sentences[i]);
+
+            }
+
+        }
     }
+
+
+    /** Returns the lowercase version of the given string. */
+    public static String lowerCase(String str) {
+        // Replace the following statement with your code
+
+        if (str == "") {
+            return "";
+        }
+
+        String str2 = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c >= 'A' && c <= 'Z') {
+                c = (char) (c + ('a' - 'A'));
+            }
+        
+            str2 += c;
+        }
+
+        return str2;
+    }
+
+    /** If str1 contains str2, returns true; otherwise returns false. */
+    public static boolean contains(String str1, String str2) {
+        // Replace the following statement with your code
+
+        if (str1 == "" && str2 == "")
+            return false;
+
+        if (str2 == "")
+            return true;
+
+        // Check each position in str1
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+            int len = 0;
+            for (int j = 0; j < str2.length(); j++) {
+                if (str1.charAt(i + j) != str2.charAt(j)) 
+                    break; // Characters not the same
+                len += 1;
+            }
+            
+            if (len == str2.length())
+                return true; // the same length so must be the same here
+        }
+
+        return false;
+    }
+
+
 }
